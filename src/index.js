@@ -24,18 +24,23 @@ const CxltToastr = {
             return component
         }
 
+        function adaptedMessage(obj) {
+            if (typeof obj !== 'object' || typeof obj !== 'function') obj = { message: obj.toString() }
+            return obj
+        }
+
         Vue.prototype.$toast = {
             success(obj) {
-                return showToast(obj, 'success')
+                return showToast(adaptedMessage(obj), 'success')
             },
             info(obj) {
-                return showToast(obj, 'info')
+                return showToast(adaptedMessage(obj), 'info')
             },
             warn(obj) {
-                return showToast(obj, 'warning')
+                return showToast(adaptedMessage(obj), 'warning')
             },
             error(obj) {
-                return showToast(obj, 'error')
+                return showToast(adaptedMessage(obj), 'error')
             },
             removeAll() {
                 showedToastrs.forEach(c => {
