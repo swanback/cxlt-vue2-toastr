@@ -25,7 +25,7 @@ const CxltToastr = {
         }
 
         function adaptedMessage(obj) {
-            if (typeof obj !== 'object' || typeof obj !== 'function') obj = { message: obj.toString() }
+            if (typeof obj !== 'object' && typeof obj !== 'function') obj = { message: obj.toString() }
             return obj
         }
 
