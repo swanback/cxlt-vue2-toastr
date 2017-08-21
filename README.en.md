@@ -1,31 +1,27 @@
 # cxlt-vue2-toastr
-**cxlt-vue2-toastr**是弹出提示的Vue2组件，基于[toastr](https://github.com/CodeSeven/toastr)的样式和[animate.css](https://github.com/daneden/animate.css)的动画效果。
+**cxlt-vue2-toastr** is a non-blocking notifications for Vue2 ，Based on [toastr](https://github.com/CodeSeven/toastr) stylings and design together with [animate.css](https://github.com/daneden/animate.css) animation effects
 
 **Demo:** [https://chengxulvtu.github.io/toastr/index.html](https://chengxulvtu.github.io/toastr/index.html)
 
-### ##[Readme document in English Version](README.en.md)##
+## Setup
 
-
-
-## 安装
-
-使用npm
+Using npm
 ```bash
 npm install cxlt-vue2-toastr --save
 ```
-或者yarn
+Or using yarn
 ```bash
 yarn add cxlt-vue2-toastr
 ```
 
-## 用法
-### 注册组件
+## Usage
+### Import Component
 ```javascript
 import CxltToastr from 'cxlt-vue2-toastr'
 
 Vue.use(CxltToastr)
 ```
-还可以传入一个全局配置对象
+Optional Global configuration options
 ```javascript
 var toastrConfigs = {
     position: 'top right',
@@ -33,28 +29,27 @@ var toastrConfigs = {
 }
 Vue.use(CxltToastr, toastrConfigs)
 ```
-下文表格中列举的属性除了color都可在全局配置中使用
 
-另外还可以配置下面四个属性
+You can use All options mentioned in below [options](#options) table except <b>color</b> option, instead, you should use below additional four color options in global configuration.
 
-| 属性           | 类型            | 描述                        |
+| Option           | Type            | Description                        |
 | ------------- |:--------------: | --------------------------:|
-| successColor         | String          | success的背景色       |
-| infoColor            | String          | info的背景色       |
-| warningColor         | String          | warning的背景色       |
-| errorColor           | String          | error的背景色       |
+| successColor         | String          | background color for success notificatoin       |
+| infoColor            | String          | background color for info notificatoin       |
+| warningColor         | String          | background color for warning notificatoin       |
+| errorColor           | String          | background color for error notificatoin       |
 
-需要注意的是，实例的color属性会覆盖全局配置中的color。
+Please note: if you pass color option in your notification instance, it will override above global color options.
 
-### 引入样式
+### Import styling files
 ```javascript
 import 'cxlt-vue2-toastr/dist/css/cxlt-vue2-toastr.css'
 ```
-或在.vue文件中使用style
-```javascript
+Or use it in .vue with style tag
+```
 <style src="cxlt-vue2-toastr/dist/css/cxlt-vue2-toastr.css"></style>
 ```
-### 使用组件
+### Call Notification Instance
 ```javascript
 this.$toast.success({
     title:'',
@@ -62,9 +57,9 @@ this.$toast.success({
 })
 ```
 
-cxlt-vue2-toastr支持以下方法
+cxlt-vue2-toastr support below functions
 
-| 方法名         |
+| functions        |
 | ------------- |
 | success       |
 | info          |
@@ -73,23 +68,24 @@ cxlt-vue2-toastr支持以下方法
 | removeAll     |
 
 
-方法需要传递一个对象，用于控制toastr显示的标题、内容、位置等，下面的表格列举了对象的属性
+You need to pass an option object which can have below values, used for controlling title, content, position etc.
+### options
 
-| 属性           | 类型            | 描述                        |
+| Option           | Type            | Description                        |
 | ------------- |:--------------: | --------------------------:|
-| title         | String          | 通知的标题                   |
-| message       | String          | 通知的内容                   |
-| closeButton   | Boolean         | 是否显示关闭按钮，默认false    |
-| progressBar   | Boolean         | 默认false    |
-| type          | String          | 通知的类型，默认success       |
-| position      | String          | 通知显示的位置，默认top right  |
-| showMethod    | String          | 显示动画的名称，默认fadeIn     |
-| hideMethod    | String          | 隐藏动画的名称，默认fadeOut    |
-| showDuration  | Number          | 显示动画持续的时间，单位ms，默认1000      |
-| hideDuration  | Number          | 隐藏动画持续的时间，单位ms，默认1000     |
-| delay         | Number          | 显示动画开始之前的延迟，单位ms，默认0，没有延迟 |
-| timeOut       | Number          | toast显示的时间，单位ms，默认1500 |
-| color         | String          | toast的背景色                       |
+| title         | String          | Title for notification                   |
+| message       | String          | Content for notification                 |
+| closeButton   | Boolean         | Need close button or not, default as <b>false</b>    |
+| progressBar   | Boolean         | default as false    |
+| [type](#type)          | String          | Type for notification，default as <b>success</b>       |
+| [position](#position)      | String          | Position for notification，default as <b>top right</b>  |
+| [showMethod](#showmethod)    | String          | Animation class name for shown，default as <b>fadeIn</b>     |
+| [hideMethod](#hidemethod)    | String          | Animation class name for hide，default as <b>fadeOut</b>    |
+| showDuration  | Number          | Duration of show animation，unit as <b>ms</b>，default as <b>1000</b>      |
+| hideDuration  | Number          | Duration of hide animation，unit as <b>ms</b>，default as <b>1000</b>     |
+| delay         | Number          | Delay of animation，unit as <b>ms</b>，default as <b>0</b>, means no delay |
+| timeOut       | Number          | Duration of notification displaying，Unit as <b>ms</b>，default as <b>1500</b> |
+| color         | String          | background color of notification                       |
 
 ### type
 
