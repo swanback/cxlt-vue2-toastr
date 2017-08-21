@@ -200,8 +200,8 @@ You need to pass an option object which can have below values, used for controll
 
 ![Demo截图](http://cxlt.oss-cn-shanghai.aliyuncs.com/cxlt-vue2-toastr%20demo.png)
 
-## 运行程序
-先fork项目，然后执行下面的命令
+## Run this project
+fork the repository，then follow below commands
 ```bash
 git clone xxx
 cd cxlt-vue2-toastr
@@ -209,6 +209,7 @@ yarn
 npm run dev
 ```
 
-## 欢迎我的关注公众号
+## Welcome to follow my wechat
+Please note, you will need wechat app to follow. for oversea users, you may just follow my github. 
 
 <img src="http://cxlt.oss-cn-shanghai.aliyuncs.com/qrcode_for_chengxulvtu.jpg" title="程序旅途公众号二维码" width="150"/>
