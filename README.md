@@ -5,9 +5,6 @@
 
 **Demo:** [https://chengxulvtu.github.io/toastr/index.html](https://chengxulvtu.github.io/toastr/index.html)
 
-#### [Readme document in English Version](README.en.md)
-
-
 
 ## 安装
 
