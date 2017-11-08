@@ -82,6 +82,7 @@ cxlt-vue2-toastr支持以下方法
 | progressBar   | Boolean         | 默认false    |
 | type          | String          | 通知的类型，默认success       |
 | position      | String          | 通知显示的位置，默认top right  |
+| icon          | String          | 自定义图标                   |
 | showMethod    | String          | 显示动画的名称，默认fadeIn     |
 | hideMethod    | String          | 隐藏动画的名称，默认fadeOut    |
 | showDuration  | Number          | 显示动画持续的时间，单位ms，默认1000      |
@@ -107,6 +108,10 @@ cxlt-vue2-toastr支持以下方法
 * `bottom center`
 * `top full width`
 * `bottom full width`
+
+### icon
+
+自定义图标可以是任何有效的图片路径
 
 ### showMethod
   * `bounce`
@@ -211,6 +216,10 @@ cd cxlt-vue2-toastr
 yarn
 npm run dev
 ```
+
+## 更新历史
+
+2017-11-09  添加自定义图标功能
 
 ## 欢迎我的关注公众号
 

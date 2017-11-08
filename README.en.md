@@ -79,6 +79,7 @@ You need to pass an option object which can have below values, used for controll
 | progressBar   | Boolean         | default as false    |
 | [type](#type)          | String          | Type for notification，default as <b>success</b>       |
 | [position](#position)      | String          | Position for notification，default as <b>top right</b>  |
+| icon          | String          | Custom Icon                                 |
 | [showMethod](#showmethod)    | String          | Animation class name for shown，default as <b>fadeIn</b>     |
 | [hideMethod](#hidemethod)    | String          | Animation class name for hide，default as <b>fadeOut</b>    |
 | showDuration  | Number          | Duration of show animation，unit as <b>ms</b>，default as <b>1000</b>      |
@@ -104,6 +105,10 @@ You need to pass an option object which can have below values, used for controll
 * `bottom center`
 * `top full width`
 * `bottom full width`
+
+### icon
+
+Any valid image url.
 
 ### showMethod
   * `bounce`
@@ -208,6 +213,10 @@ cd cxlt-vue2-toastr
 yarn
 npm run dev
 ```
+
+## Update History
+
+2017-11-09   Custom Icon.
 
 ## Welcome to follow my wechat
 Please note, you will need wechat app to follow. for oversea users, you may just follow my github. 
