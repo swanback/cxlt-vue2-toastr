@@ -3,6 +3,9 @@
         <div class="toast" :class="['toast-'+type]" :style="{backgroundColor:toastBackgroundColor}" v-if="show">
             <button class="toast-close-button" role="button" @click="hideToastr" v-if="closeButton">×</button>
             <div class="toast-progress" v-if="progressBar" :style="'width: ' + progress.percent + '%'"></div>
+            <div class="toast-icon">
+            <img :src="iconSrc"/>
+            </div>
             <div class="toast-title">{{title}}</div>
             <div class="toast-message">{{message}}</div>
         </div>
@@ -11,6 +14,7 @@
 
 
 <script>
+
 export default {
     name: 'CxltToastr',
     data: () => {
@@ -20,7 +24,13 @@ export default {
                 percent: 0,
                 intervalId: null
             },
-            show: false
+            show: false,
+            defaultIcons: {
+                success: require('./assets/success.png'),
+                info: require('./assets/info.png'),
+                warning: require('./assets/warning.png'),
+                error: require('./assets/error.png')
+            }
         }
     },
     props: {
@@ -45,6 +55,9 @@ export default {
         progressBar: {
             type: Boolean,
             default: false
+        },
+        icon: {
+            type: String
         },
         timeOut: {
             default: '1500'
@@ -121,6 +134,10 @@ export default {
                 }
                 return null
             }
+        },
+        iconSrc() {
+            if (this.icon) return this.icon
+            return this.defaultIcons[this.type]
         }
     },
     methods: {

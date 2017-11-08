@@ -76,6 +76,15 @@
                         </label>
                     </p>
                 </div>
+                <div class="field">
+                    <label class="label">Custom Icon</label>
+                    <p class="control custom-icon">
+                        <label class="radio" v-for="icon in customIcons" :style="{backgroundColor:colors.hex}" style="margin-bottom:1px;padding:2px">
+                            <input type="radio" name="customIcon" v-model="toastr.icon" :value="icon" > <img :src="icon" />
+                        </label>
+                    
+                    </p>
+                </div>
             </div>
             <div class="column">
                 <div class="field">
@@ -271,6 +280,44 @@
 <script>
 import { Sketch } from 'vue-color'
 
+// const types=['success','info','warning','error']
+// const icons={};
+// for(var i=0 ; i< types.length; i++){
+//     for(var j=0;j<5;j++){
+//         var ii='./assets/'+types[i]+'_'+(j+1)+'.png'
+//        console.log('require("'+ii+'")')
+//     }
+// }
+
+const icons = {
+    success:[require("./assets/success_1.png"),
+            require("./assets/success_2.png"),
+            require("./assets/success_3.png"),
+            require("./assets/success_4.png"),
+            require("./assets/success_5.png")],
+    info:[
+        require("./assets/info_1.png"),
+        require("./assets/info_2.png"),
+        require("./assets/info_3.png"),
+        require("./assets/info_4.png"),
+        require("./assets/info_5.png")
+    ],
+    warning:[
+        require("./assets/warning_1.png"),
+        require("./assets/warning_2.png"),
+        require("./assets/warning_3.png"),
+        require("./assets/warning_4.png"),
+        require("./assets/warning_5.png")
+    ],
+    error:[
+        require("./assets/error_1.png"),
+        require("./assets/error_2.png"),
+        require("./assets/error_3.png"),
+        require("./assets/error_4.png"),
+        require("./assets/error_5.png")
+    ]
+}
+
 export default {
     name: 'app',
     data() {
@@ -281,6 +328,7 @@ export default {
                 message: 'Gnome & Growl type non-blocking notifications',
                 closeButton: true,
                 progressBar: false,
+                icon:icons['success'][0],
                 position: 'top right',
                 showMethod: 'fadeIn',
                 hideMethod: 'fadeOut',
@@ -292,7 +340,8 @@ export default {
             colors: {
                 hex: '#51a351',
                 a: 1
-            }
+            },
+            customIcons:icons['success']
         }
     },
     methods: {
@@ -300,7 +349,6 @@ export default {
             this.toastr = Object.assign(this.toastr, {
                 color: this.colors.hex
             })
-            console.log(this.colors.hex)
             switch (this.type) {
                 case 'success':
                     this.$toast.success(this.toastr)
@@ -324,7 +372,7 @@ export default {
     },
     watch: {
         type(newType) {
-            console.log(newType)
+            this.customIcons=icons[newType]
             switch (newType) {
                 case 'success':
                     this.colors = {
@@ -351,6 +399,9 @@ export default {
                     }
                     break;
             }
+        },
+        customIcons(newIcons){
+            this.toastr.icon=newIcons[0]
         }
     },
     components: {
@@ -389,5 +440,11 @@ label.radio {
 .radio+.radio {
     margin-left: 0;
 }
+
+.custom-icon img{
+    width:30px;
+    height:30px;
+}
+
 </style>
 
