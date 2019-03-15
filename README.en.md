@@ -1,4 +1,4 @@
-# cxlt-vue2-toastr
+# cxlt-vue2-toastr ([中文文档](/README.md))
 **cxlt-vue2-toastr** is a non-blocking notifications for Vue2 ，Based on [toastr](https://github.com/CodeSeven/toastr) stylings and design together with [animate.css](https://github.com/daneden/animate.css) animation effects
 
 **Demo:** [https://chengxulvtu.github.io/toastr/index.html](https://chengxulvtu.github.io/toastr/index.html)
