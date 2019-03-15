@@ -223,4 +223,10 @@ npm run dev
 
 ## 欢迎我的关注公众号
 
-<img src="http://cxlt.oss-cn-shanghai.aliyuncs.com/qrcode_for_chengxulvtu.jpg" title="程序旅途公众号二维码" width="150"/>
+<img src="https://image.chengxulvtu.com/2014/07/qrcode_for_gh_71d38a91773e_258.jpg" title="程序旅途公众号二维码" width="150"/>
+
+## 捐助
+
+BTC: 31wAperpMdHeiy4G8ygoREFDM8hyodabfr
+ETH: 0x5d127646887be9adb74efa1e472fa47ce50a50cb
+EOS: bobtian31223
