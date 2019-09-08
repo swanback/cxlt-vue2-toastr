@@ -75,6 +75,7 @@ You need to pass an option object which can have below values, used for controll
 | ------------- |:--------------: | --------------------------:|
 | title         | String          | Title for notification                   |
 | message       | String          | Content for notification                 |
+| useHtml       | Boolean         | Allow html-markup in content, default as **false**             |
 | closeButton   | Boolean         | Need close button or not, default as <b>false</b>    |
 | progressBar   | Boolean         | default as false    |
 | [type](#type)          | String          | Type for notification，default as <b>success</b>       |

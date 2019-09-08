@@ -7,7 +7,8 @@
             <img :src="iconSrc"/>
             </div>
             <div class="toast-title">{{title}}</div>
-            <div class="toast-message">{{message}}</div>
+            <div class="toast-message" v-html="message" v-if="useHtml"></div>
+            <div class="toast-message" v-text="message" v-else></div>
         </div>
     </transition>
 </template>
@@ -47,6 +48,10 @@ export default {
         },
         message: {
             type: String
+        },
+        useHtml: {
+            type: Boolean,
+            default: false
         },
         closeButton: {
             type: Boolean,
