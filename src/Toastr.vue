@@ -1,6 +1,6 @@
 <template>
     <transition :enter-active-class="enterActiveClass" :leave-active-class="leaveActiveClass" @before-enter="beforeEnter" @after-enter="afterEnter" @before-leave="beforeLeave">
-        <div class="toast" :class="['toast-'+type]" :style="{backgroundColor:toastBackgroundColor}" v-if="show">
+        <div class="toast" :class="['toast-'+type]" :style="{backgroundColor:toastBackgroundColor}" v-if="show" role="alert">
             <button class="toast-close-button" role="button" @click="hideToastr" v-if="closeButton">×</button>
             <div class="toast-progress" v-if="progressBar" :style="'width: ' + progress.percent + '%'"></div>
             <div class="toast-icon">
